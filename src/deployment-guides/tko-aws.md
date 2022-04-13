@@ -126,7 +126,7 @@ The following describes the steps to create your AWS environment and configure y
 	<!-- /* cSpell:disable */ -->
 	```
 	aws ec2 create-transit-gateway --description "For TKG Transit" > $WORKING_DIR/transit-gw
-	aws ec2 create-transit-gateway-vpc-attachment --transit-gateway-id  $(jq -r .TransitGateway.TransitGatewayId $WORKING_DIR/transit-gw) --vpc-id $vpcId --subnet-ids $(jq -r .Subnet.SubnetId $WORKING_DIR/subnet-priv-a) --subnet-ids $(jq -r .Subnet.SubnetId $WORKING_DIR/subnet-priv-b) --subnet-ids $(jq -r .Subnet.SubnetId $WORKING_DIR/subnet-priv-c) --	output json > $WORKING_DIR/attachment_transit_gw
+	aws ec2 create-transit-gateway-vpc-attachment --transit-gateway-id  $(jq -r .TransitGateway.TransitGatewayId $WORKING_DIR/transit-gw) --vpc-id $vpcId --subnet-ids $(jq -r .Subnet.SubnetId $WORKING_DIR/subnet-priv-a) --subnet-ids $(jq -r .Subnet.SubnetId $WORKING_DIR/subnet-priv-b) --subnet-ids $(jq -r .Subnet.SubnetId $WORKING_DIR/subnet-priv-c) --output json > $WORKING_DIR/attachment_transit_gw
 	```
 	<!-- /* cSpell:enable */ -->
 
